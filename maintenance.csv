@@ -1,0 +1,16 @@
+id_maintenance,tanggal,nama_mesin,tipe_mesin,lokasi,tipe_kerusakan,biaya_perbaikan,downtime_menit
+MT003,2026-01-03,Press-01,"Press Machine",Stamping,"Sensor Error",1200000.00,45
+MT010,2026-01-06,Press-01,"Press Machine",Stamping,"Sensor Error",1100000.00,40
+MT001,2026-01-01,Press-02,"Press Machine",Stamping,"Bearing Aus",3500000.00,120
+MT002,2026-01-02,Press-02,"Press Machine",Stamping,Overheating,4200000.00,180
+MT005,2026-01-04,Press-02,"Press Machine",Stamping,"Motor Failure",5500000.00,240
+MT007,2026-01-05,Press-02,"Press Machine",Stamping,"Hydraulic Leak",3800000.00,150
+MT009,2026-01-06,Press-02,"Press Machine",Stamping,Overheating,4500000.00,200
+MT011,2026-01-07,Press-02,"Press Machine",Stamping,"Bearing Aus",3600000.00,130
+MT014,2026-01-08,Press-02,"Press Machine",Stamping,"Motor Failure",6000000.00,260
+MT004,2026-01-03,Cutting-01,"Cutting Machine",Cutting,"Belt Putus",1800000.00,60
+MT012,2026-01-07,Cutting-01,"Cutting Machine",Cutting,"Belt Putus",1900000.00,55
+MT006,2026-01-04,Welding-01,"Welding Machine",Assembly,"Welding Head Rusak",2200000.00,75
+MT013,2026-01-08,Welding-01,"Welding Machine",Assembly,"Kabel Terbakar",2500000.00,90
+MT008,2026-01-05,Finishing-01,"Finishing Machine",Finishing,"Roller Aus",1000000.00,30
+MT015,2026-01-09,Finishing-01,"Finishing Machine",Finishing,"Roller Aus",950000.00,25

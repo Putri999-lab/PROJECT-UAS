@@ -1,0 +1,27 @@
+id_produksi,tanggal,jam,nama_mesin,tipe_mesin,nama_operator,shift_grup,skill_level,jenis_bahan,vendor,setting_rpm,suhu_mesin,qty_ok,qty_ng
+P001,2026-01-01,08:00:00,Press-01,Press Machine,Andi Saputra,A,5,Steel Coil A,Krakatau Steel,1450,85.0,520,12
+P005,2026-01-01,12:00:00,Finishing-01,Finishing Machine,Hendra Wijaya,A,5,Steel Coil A,Krakatau Steel,1300,75.0,580,5
+P009,2026-01-02,11:00:00,Welding-01,Welding Machine,Gina Maharani,C,2,Steel Coil A,Krakatau Steel,1420,83.0,495,12
+P016,2026-01-04,08:00:00,Press-01,Press Machine,Budi Santoso,A,4,Steel Coil A,Krakatau Steel,1490,89.0,500,14
+P020,2026-01-04,12:00:00,Finishing-01,Finishing Machine,Fajar Nugroho,C,4,Steel Coil A,Krakatau Steel,1310,77.0,572,6
+P024,2026-01-05,11:00:00,Welding-01,Welding Machine,Fajar Nugroho,C,4,Steel Coil A,Krakatau Steel,1440,84.0,503,10
+P028,2026-01-06,10:00:00,Cutting-01,Cutting Machine,Andi Saputra,A,5,Steel Coil A,Krakatau Steel,1360,79.0,556,8
+P002,2026-01-01,09:00:00,Press-02,Press Machine,Citra Lestari,B,2,Steel Coil B,Gunung Raja Paksi,1600 RPM,118.0,470,35
+P006,2026-01-02,08:00:00,Press-01,Press Machine,Budi Santoso,A,4,Steel Coil B,Gunung Raja Paksi,1500,88.0,510,15
+P010,2026-01-02,12:00:00,Finishing-01,Finishing Machine,Fajar Nugroho,C,4,Steel Coil B,Gunung Raja Paksi,1320,76.0,575,6
+P013,2026-01-03,10:00:00,Cutting-01,Cutting Machine,Budi Santoso,A,4,Steel Coil B,Gunung Raja Paksi,1360,79.0,558,8
+P017,2026-01-04,09:00:00,Press-02,Press Machine,Deni Pratama,B,1,Steel Coil B,Gunung Raja Paksi,1680 RPM,101.62068965517241,440,45
+P021,2026-01-05,08:00:00,Press-01,Press Machine,Andi Saputra,A,5,Steel Coil B,Gunung Raja Paksi,1460,86.0,518,12
+P025,2026-01-05,12:00:00,Finishing-01,Finishing Machine,Hendra Wijaya,A,5,Steel Coil B,Gunung Raja Paksi,1330,76.0,579,5
+P029,2026-01-06,11:00:00,Welding-01,Welding Machine,Gina Maharani,C,2,Steel Coil B,Gunung Raja Paksi,1420,83.0,499,11
+P003,2026-01-01,10:00:00,Cutting-01,Cutting Machine,Budi Santoso,A,4,Aluminium Sheet,IndoMetal,1350,78.0,560,8
+P011,2026-01-03,08:00:00,Press-01,Press Machine,Hendra Wijaya,A,5,Aluminium Sheet,IndoMetal,1480,87.0,515,11
+P014,2026-01-03,11:00:00,Welding-01,Welding Machine,Fajar Nugroho,C,4,Aluminium Sheet,IndoMetal,1410,84.0,505,10
+P018,2026-01-04,10:00:00,Cutting-01,Cutting Machine,Hendra Wijaya,A,5,Aluminium Sheet,IndoMetal,1370,81.0,548,9
+P026,2026-01-06,08:00:00,Press-01,Press Machine,Budi Santoso,A,4,Aluminium Sheet,IndoMetal,1470,88.0,512,13
+P030,2026-01-06,12:00:00,Finishing-01,Finishing Machine,Fajar Nugroho,C,4,Aluminium Sheet,IndoMetal,1320,75.0,576,5
+P004,2026-01-01,11:00:00,Welding-01,Welding Machine,Fajar Nugroho,C,4,Carbon Steel,Baja Nusantara,1400,82.0,500,10
+P008,2026-01-02,10:00:00,Cutting-01,Cutting Machine,Andi Saputra,A,5,Carbon Steel,Baja Nusantara,1380,80.0,550,9
+P015,2026-01-03,12:00:00,Finishing-01,Finishing Machine,Andi Saputra,A,5,Carbon Steel,Baja Nusantara,1290,74.0,585,4
+P019,2026-01-04,11:00:00,Welding-01,Welding Machine,Gina Maharani,C,2,Carbon Steel,Baja Nusantara,1430,85.0,498,11
+P023,2026-01-05,10:00:00,Cutting-01,Cutting Machine,Budi Santoso,A,4,Carbon Steel,Baja Nusantara,1340,78.0,562,7

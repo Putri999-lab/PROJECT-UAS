@@ -1,0 +1,188 @@
+import streamlit as st
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# ==========================
+# PAGE CONFIG
+# ==========================
+st.set_page_config(
+    page_title="Executive Dashboard PT Andalas Manufaktur",
+    page_icon="📊",
+    layout="wide"
+)
+
+# ==========================
+# LOAD DATA
+# ==========================
+produksi = pd.read_csv("produksi_clean.csv")
+maintenance = pd.read_csv("maintenance.csv")
+
+# ==========================
+# KPI
+# ==========================
+
+total_ok = produksi["qty_ok"].sum()
+total_ng = produksi["qty_ng"].sum()
+reject_rate = (total_ng/(total_ok+total_ng))*100
+
+total_downtime = maintenance["downtime_menit"].sum()
+total_biaya = maintenance["biaya_perbaikan"].sum()
+
+# ==========================
+# HEADER
+# ==========================
+
+st.title("📊 Executive Dashboard")
+st.subheader("Operation Excellence 2026")
+st.write("PT Andalas Manufaktur")
+
+st.divider()
+
+# ==========================
+# KPI CARDS
+# ==========================
+
+c1,c2,c3,c4 = st.columns(4)
+
+c1.metric(
+    "Total Produksi",
+    f"{total_ok:,}"
+)
+
+c2.metric(
+    "Total Reject",
+    f"{total_ng:,}"
+)
+
+c3.metric(
+    "Reject Rate",
+    f"{reject_rate:.2f}%"
+)
+
+c4.metric(
+    "Total Downtime",
+    f"{total_downtime:,} Menit"
+)
+
+st.metric(
+    "Total Biaya Maintenance",
+    f"Rp {total_biaya:,.0f}"
+)
+
+st.divider()
+
+# ==========================
+# REJECT PER MESIN
+# ==========================
+
+st.subheader("Reject per Mesin")
+
+reject_mesin = produksi.groupby("nama_mesin")["qty_ng"].sum()
+
+fig,ax = plt.subplots(figsize=(7,4))
+reject_mesin.plot(kind="bar",ax=ax)
+plt.ylabel("Qty Reject")
+
+st.pyplot(fig)
+
+# ==========================
+# REJECT PER SHIFT
+# ==========================
+
+st.subheader("Reject per Shift")
+
+reject_shift = produksi.groupby("shift_grup")["qty_ng"].sum()
+
+fig,ax = plt.subplots(figsize=(6,4))
+reject_shift.plot(kind="bar",ax=ax)
+plt.ylabel("Qty Reject")
+
+st.pyplot(fig)
+
+# ==========================
+# REJECT PER SKILL
+# ==========================
+
+st.subheader("Reject berdasarkan Skill Level")
+
+reject_skill = produksi.groupby("skill_level")["qty_ng"].sum()
+
+fig,ax = plt.subplots(figsize=(6,4))
+reject_skill.plot(kind="bar",ax=ax)
+
+st.pyplot(fig)
+
+# ==========================
+# DOWNTIME PER MESIN
+# ==========================
+
+st.subheader("Downtime Mesin")
+
+downtime = maintenance.groupby("nama_mesin")["downtime_menit"].sum()
+
+fig,ax = plt.subplots(figsize=(7,4))
+downtime.plot(kind="bar",ax=ax)
+
+st.pyplot(fig)
+
+# ==========================
+# BIAYA MAINTENANCE
+# ==========================
+
+st.subheader("Biaya Maintenance")
+
+biaya = maintenance.groupby("nama_mesin")["biaya_perbaikan"].sum()
+
+fig,ax = plt.subplots(figsize=(7,4))
+biaya.plot(kind="bar",ax=ax)
+
+st.pyplot(fig)
+
+# ==========================
+# JENIS KERUSAKAN
+# ==========================
+
+st.subheader("Jenis Kerusakan")
+
+kerusakan = maintenance["tipe_kerusakan"].value_counts()
+
+fig,ax = plt.subplots(figsize=(7,5))
+kerusakan.plot(kind="bar",ax=ax)
+
+st.pyplot(fig)
+
+# ==========================
+# DATA TABLE
+# ==========================
+
+st.divider()
+
+st.subheader("Data Produksi")
+
+st.dataframe(produksi,use_container_width=True)
+
+st.subheader("Data Maintenance")
+
+st.dataframe(maintenance,use_container_width=True)
+
+# ==========================
+# KESIMPULAN
+# ==========================
+
+st.divider()
+
+st.subheader("Insight Dashboard")
+
+st.success("""
+1. Mesin Press-02 memiliki reject tertinggi.
+
+2. Press-02 memiliki downtime paling tinggi.
+
+3. Press-02 memiliki biaya maintenance terbesar.
+
+4. Jenis kerusakan yang paling sering muncul adalah:
+Bearing Aus, Overheating, Motor Failure,
+Belt Putus, Roller Aus, dan Sensor Error.
+
+5. Mesin Press-02 menjadi prioritas utama preventive maintenance.
+""")
